@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日下饭选择</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #prompt {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prompt">今天中午吃饭看什么？</div>
+
+    <script>
+        // 一级选项
+        const firstLevelOptions = ['电影', '电视剧', '综艺', '时代少年团物料'];
+        // 电影选项
+        const movieOptions = ['哪吒', '骗骗喜欢你', '唐人街探案', '孤注一掷', '封神', '抓娃娃', '飞驰人生',
+            '疯狂动物城', '冰雪奇缘', '哈利波特', '速度与激情', '暮光之城', '碟中谍', '007', '公主日记',
+            '小鬼当家', '加勒比海盗', '怦然心动', '歌舞青春', '史密斯夫妇', '穿普拉达的女王', '木乃伊',
+            '侏罗纪公园', '灰姑娘', '阿拉丁', '他是龙', '美女与野兽', '芭比', '天生一对', '海王',
+            '巴霍巴利王', '鼠来宝', '神秘巨星', '摔跤吧爸爸', '马戏之王', '真爱至上', '理智与情感', '特洛伊',
+            '虎口脱险', '音乐之声', '爱乐之城', '博物馆奇妙夜', '天才眼镜狗'];
+        // 电视剧选项
+        const dramaOptions = ['爱你', '难哄', '度华年', '玫瑰的故事', '云之羽', '西游记', '陈情令', '你给我的喜欢',
+            '香蜜沉沉烬如霜', '玉骨遥', '余生请多指教', '狂飙', '城中之城', '我的阿勒泰', '炽道', '19层',
+            '救了一万次的你', '因为遇见你', '西游记', '红楼梦', '偷偷藏不住'];
+        // 综艺选项
+        const varietyOptions = ['现在就出发', '演员请就位', '这就是街舞', '奔跑吧', '令人心动的offer', '王牌对王牌',
+            '创造营', '拜托了冰箱', '明星大侦探', '密室大逃脱', '声生不息', '你好星期六', '披荆斩棘',
+            '乘风破浪', '时光音乐会', '歌手', '爸爸当家', '全员加速中', '花儿与少年', '向往的生活',
+            '森林进化论', '初入职场的我们'];
+        // 时代少年团物料选项
+        const tntOptions = ['浅炸一下吧', '时代顶呱呱', '三人行', '时代有东西', '时代夏令营', '楼晚', '循梦',
+            '乌托邦少年', '火力全开', '少年on fire', '三重楼', '一起走过的日子', 'BOOM TV', '少年梦游记',
+            '我们的新家', '这福气给你要不要', '哥弟出游记', '小炸的暑假生活', '台风蜕变之战'];
+
+        document.addEventListener('click', function () {
+            const promptElement = document.getElementById('prompt');
+            const currentPrompt = promptElement.textContent;
+
+            if (currentPrompt === '今天中午吃饭看什么？') {
+                const randomIndex = Math.floor(Math.random() * firstLevelOptions.length);
+                promptElement.textContent = '看什么' + firstLevelOptions[randomIndex] + '？';
+            } else if (currentPrompt === '看什么电影？') {
+                const randomIndex = Math.floor(Math.random() * movieOptions.length);
+                promptElement.textContent = movieOptions[randomIndex];
+            } else if (currentPrompt === '看什么电视剧？') {
+                const randomIndex = Math.floor(Math.random() * dramaOptions.length);
+                promptElement.textContent = dramaOptions[randomIndex];
+            } else if (currentPrompt === '看什么综艺？') {
+                const randomIndex = Math.floor(Math.random() * varietyOptions.length);
+                promptElement.textContent = varietyOptions[randomIndex];
+            } else if (currentPrompt === '看什么物料？') {
+                const randomIndex = Math.floor(Math.random() * tntOptions.length);
+                promptElement.textContent = tnt
